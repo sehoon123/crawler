@@ -7,11 +7,12 @@ import os
 # this is for multi-threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-page_no = [i for i in range(1, 5)]
+numOfPage = 5
+page_no = [i for i in range(1, numOfPage+1)]
 
 for no in page_no:
-    url = "https://www.manaboza17.com/comic/ep_list/16/" + str(no)
-    image_url = "https://www.manaboza17.com/comic/ep_view/16/"
+    url = "https://www.manaboza17.com/comic/ep_list/36/" + str(no)
+    image_url = "https://www.manaboza17.com/comic/ep_view/36/"
     res = requests.get(url)
     res.raise_for_status()
     soup = BeautifulSoup(res.text, "lxml")
